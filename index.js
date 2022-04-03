@@ -15,14 +15,7 @@ async function connect() {
   await server.listen(port);
   console.log(`Server is listening on port ${port}`);
 
-  socket(server, {
-    cors: {
-      origin: [
-        'https://howdoising.herokuapp.com',
-        'https://gopendrajangir.github.io/howdoising/',
-      ],
-    },
-  });
+  socket(server);
 }
 
 connect().catch((err) => {

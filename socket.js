@@ -3,7 +3,10 @@ const socketIO = require('socket.io');
 module.exports = (server) => {
   const io = socketIO(server, {
     cors: {
-      origin: ['http://localhost:3000', 'http://localhost:8000'],
+      origin: [
+        'https://howdoising.herokuapp.com',
+        'https://gopendrajangir.github.io/howdoising/',
+      ],
     },
   });
 
