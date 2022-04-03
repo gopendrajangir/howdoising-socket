@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 app.get('*', (req, res) => {
-  return res.json(JSON.stringify({ howdoising: ':)' }));
+  return res.end('howdoising');
 });
 
 async function connect() {
