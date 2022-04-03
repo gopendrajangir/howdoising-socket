@@ -7,6 +7,7 @@ module.exports = (server) => {
         'https://howdoising.herokuapp.com',
         'https://gopendrajangir.github.io/howdoising/',
       ],
+      credentials: true,
     },
   });
 
