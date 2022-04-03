@@ -5,7 +5,14 @@ const socket = require('./socket.js');
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      'https://howdoising.herokuapp.com',
+      'https://howdoising-socket.herokuapp.com',
+    ],
+  })
+);
 
 app.get('*', (req, res) => {
   return res.end('howdoising');
