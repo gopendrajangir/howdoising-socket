@@ -7,9 +7,13 @@ const app = express();
 
 app.use(cors());
 
+app.get('*', () => {
+  res.json(JSON.stringify({ howdoising: ':)' }));
+});
+
 async function connect() {
   const server = http.createServer(app);
-  const port = 8080;
+  const port = process.env.PORT || 8080;
 
   await server.listen(port);
   console.log(`Server is listening on port ${port}`);
