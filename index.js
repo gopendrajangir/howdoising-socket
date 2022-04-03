@@ -1,18 +1,8 @@
 const express = require('express');
-const cors = require('cors');
 const http = require('http');
 const socket = require('./socket.js');
 
 const app = express();
-
-app.use(
-  cors({
-    origin: [
-      'https://howdoising.herokuapp.com',
-      'https://gopendrajangir.github.io/howdoising/',
-    ],
-  })
-);
 
 app.get('*', (req, res) => {
   return res.end('howdoising');
@@ -25,7 +15,14 @@ async function connect() {
   await server.listen(port);
   console.log(`Server is listening on port ${port}`);
 
-  socket(server);
+  socket(server, {
+    cors: {
+      origin: [
+        'https://howdoising.herokuapp.com',
+        'https://gopendrajangir.github.io/howdoising/',
+      ],
+    },
+  });
 }
 
 connect().catch((err) => {
