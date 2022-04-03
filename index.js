@@ -9,7 +9,7 @@ app.use(
   cors({
     origin: [
       'https://howdoising.herokuapp.com',
-      'https://howdoising-socket.herokuapp.com',
+      'https://gopendrajangir.github.io/howdoising/',
     ],
   })
 );
